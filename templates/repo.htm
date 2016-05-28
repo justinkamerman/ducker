@@ -1,0 +1,79 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main-0-02215d079ab2d50d8988.css')}}">
+    <style type="text/css"></style>
+  </head>
+  <body>
+    <div id="app">
+      <main class="Application__main___hmFcL" data-reactid=".krdhw7rshs">
+        <div class="contain-to-grid" data-reactid=".krdhw7rshs.0">
+          <nav class="top-bar" data-topbar="true" role="navigation" data-reactid=".krdhw7rshs.0.0">
+            <section class="top-bar-section" data-reactid=".krdhw7rshs.0.0.0">
+              <ul class="title-area" data-reactid=".krdhw7rshs.0.0.0.0">
+                <li data-reactid=".krdhw7rshs.0.0.0.0.0">
+                  <a class="" href="https://hub.docker.com/" data-reactid=".krdhw7rshs.0.0.0.0.0.0">
+                    <img src="{{ url_for('static', filename='mini-logo.png')}}" alt="docker logo" class="Nav__logo___2NwhF" data-reactid=".krdhw7rshs.0.0.0.0.0.0.0"></a></li></ul>
+              <ul class="leftNav" data-reactid=".krdhw7rshs.0.0.0.1">
+              
+            </section>
+          </nav>
+        </div>
+        <div class="full-width repository-page" data-reactid=".krdhw7rshs.1">
+          <div class="RepositoryPageWrapper__repoHeader___1-_FS" data-reactid=".krdhw7rshs.1.0">
+            <div class="row" data-reactid=".krdhw7rshs.1.0.0">
+              <div class="large-12 columns" data-reactid=".krdhw7rshs.1.0.0.0">
+                <div class="RepositoryPageWrapper__repoLabel___1668D" data-reactid=".krdhw7rshs.1.0.0.0.0">
+                  <div data-reactid=".krdhw7rshs.1.0.0.0.0.0">
+                    <span data-reactid=".krdhw7rshs.1.0.0.0.0.0.0">Private</span>
+                    <span data-reactid=".krdhw7rshs.1.0.0.0.0.0.1"> Repository</span></div></div>
+                <h2 class="RepositoryPageWrapper__repoTitle___3r12T" data-reactid=".krdhw7rshs.1.0.0.0.1">
+                  <div data-reactid=".krdhw7rshs.1.0.0.0.1.0">
+                    <a class="" href="../" data-reactid=".krdhw7rshs.1.0.0.0.1.0.0">{{ registry }}</a>
+                    <span data-reactid=".krdhw7rshs.1.0.0.0.1.0.1">/</span>
+                    <a class="" href="../repo/{{repo.name}}" data-reactid=".krdhw7rshs.1.0.0.0.1.0.2">{{ repo.name }}</a>
+                  </div>
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div data-reactid=".krdhw7rshs.1.1">
+            <div class="RepositoryDetailsWrapper__repoDetailsContent___1gg2B" data-reactid=".krdhw7rshs.1.1.1">
+              <div class="row" data-reactid=".krdhw7rshs.1.1.1.0">
+                <div class="large-12 columns" data-reactid=".krdhw7rshs.1.1.1.0.0">
+                  <div data-reactid=".krdhw7rshs.1.1.1.0.0.0">
+                    <div class="FlexTable__flexTable___1FknQ FlexTable__defaultBorder___3NzJE" data-reactid=".krdhw7rshs.1.1.1.0.0.0.1">
+                      <div class="FlexTable__flexHeader___2PARo" data-reactid=".krdhw7rshs.1.1.1.0.0.0.1.0">
+                        <div class="FlexTable__flexItem___3vmPs FlexTable__flexItemPadding___2mohd FlexTable__flexItemGrow2___3I1KN">
+                          <div data-reactid=".krdhw7rshs.1.1.1.0.0.0.1.0.0.0">Tag Name</div>
+                        </div>
+                        <div class="FlexTable__flexItem___3vmPs FlexTable__flexItemPadding___2mohd FlexTable__flexItemGrow2___3I1KN">
+                          <div data-reactid=".krdhw7rshs.1.1.1.0.0.0.1.0.0.0">Last Updated</div>
+                        </div>
+                      </div>
+                       {% for error in repo.errors %}
+                      <div class="FlexTable__flexRow___2mqir" data-reactid=".krdhw7rshs.1.1.1.0.0.0.1.1:$rel_20160429">
+                        <div class="FlexTable__flexItem___3vmPs FlexTable__flexItemPadding___2mohd FlexTable__flexItemGrow2___3I1KN">{{ error }}</div>
+                      </div>
+                      {% endfor %}
+                      {% if repo.updated %}
+                      {% for tag, updated in repo.updated|dictsort(by='value')|reverse() %}
+                      <div class="FlexTable__flexRow___2mqir" data-reactid=".krdhw7rshs.1.1.1.0.0.0.1.1:$rel_20160429">
+                        <div class="FlexTable__flexItem___3vmPs FlexTable__flexItemPadding___2mohd FlexTable__flexItemGrow2___3I1KN">{{ tag }}</div>
+                        <div class="FlexTable__flexItem___3vmPs FlexTable__flexItemPadding___2mohd FlexTable__flexItemGrow2___3I1KN">{{ updated }}</div>
+                      </div>
+                      {% endfor %}
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
