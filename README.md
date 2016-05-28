@@ -1,12 +1,12 @@
 # Ducker 
-A cheap and cheerful UI for private Docker registry. Uses Docker v2 API to pull registry manifests with a Python Flask application. Can be deployed on AWS Elastic Beastalk.
+A cheap and cheerful UI for private Docker registry. Uses Docker v2 API to pull registry manifests from a Python Flask application. Can be deployed on AWS Elastic Beastalk.
 
 ## Running
 
 ```shell
 $ git clone https://github.com/justinkamerman/ducker.git
 $ cd ducker
-$ export DOCKER_REGISTRY_URL=http://my.docker.registry:5043
+$ export DOCKER_REGISTRY_URL=http://docker-registry.mydomain.com:5043
 $ export DOCKER_REGISTRY_USER=reguser
 $ export DOCKER_REGISTRY_PASSWORD=mypass
 $ python application.py 
